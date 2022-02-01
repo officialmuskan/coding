@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+
+void input(int a[],int used_size)
+{
+
+    cout<<"\nEnter the elements in an array : ";
+    for(int i=0;i<used_size;i++)
+    {
+        cin>>a[i];
+    }
+    cout<<endl;
+}
+
+
+//Reversel
+void reverse(int a[],int n)
+{
+    cout<<"Reverse of an array is : ";
+    for(int i=n-1;i>=0;i--)
+    {
+        cout<<a[i]<<"  ";
+    }
+    cout<<endl;
+}
+
+
+//Reverse by swap
+void reverses(int a[],int n)
+{
+    int start=0;
+    int end=n-1;
+    while(start<=end)
+    {
+    swap(a[start],a[end]);
+    start++;
+    end--;
+    }
+    // display reversed array
+    cout<<"Reverse of an array is : ";
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+}
+
+
+//Alternate Element Swapping
+void swapAlternate(int a[],int n)
+{
+    for(int i=0;i<n;i+=2)
+    {
+        if(i+1<n)
+        swap(a[i],a[i+1]);
+    }
+    //Display modified array
+    cout<<"Alternate swapping of an array is : ";
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+}
+
+
+int main()
+{
+    int a[10],used_size;
+    cout<<"Enter the size of an array : ";
+    cin>>used_size;
+    input(a,used_size);
+    // reverse(a,used_size);
+    // reverses(a,used_size);
+    swapAlternate(a,used_size);
+    return 0;
+}
